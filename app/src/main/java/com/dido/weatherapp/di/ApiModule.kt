@@ -1,6 +1,6 @@
 package com.dido.weatherapp.di
 
-import com.dido.weatherapp.data.response.Api
+import com.dido.weatherapp.data.Api
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

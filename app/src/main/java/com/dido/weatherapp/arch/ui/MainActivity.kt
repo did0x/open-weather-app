@@ -1,7 +1,8 @@
-package com.dido.weatherapp
+package com.dido.weatherapp.arch.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.dido.weatherapp.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

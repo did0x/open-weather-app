@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -24,6 +25,7 @@ android {
             applicationIdSuffix = ".debug"
             isMinifyEnabled = false
             buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\"")
+            buildConfigField("String", "ASSET_URL", "\"https://openweathermap.org/img/wn/\"")
             buildConfigField("String", "API_KEY", "\"1cc2a315bff8772adbc63586230c0cdd\"")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -32,6 +34,7 @@ android {
             isDebuggable = false
             isJniDebuggable = false
             buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\"")
+            buildConfigField("String", "ASSET_URL", "\"https://openweathermap.org/img/wn/\"")
             buildConfigField("String", "API_KEY", "\"1cc2a315bff8772adbc63586230c0cdd\"")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -65,6 +68,11 @@ dependencies {
 
     debugImplementation("com.github.chuckerteam.chucker:library:4.0.0")
     releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+
+    implementation("com.github.Dimezis:BlurView:version-2.0.3")
 
     implementation("com.google.dagger:hilt-android:2.51")
     kapt("com.google.dagger:hilt-compiler:2.51")
